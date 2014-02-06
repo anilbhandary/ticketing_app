@@ -1,4 +1,5 @@
 TicketingApp::Application.routes.draw do
+  resources :users
   get "users/new"
   #get "events_website/home"
   # The priority is based upon order of creation: first created -> highest priority.
