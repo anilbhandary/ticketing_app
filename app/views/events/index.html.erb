@@ -1,0 +1,13 @@
+<div class="center hero-unit">
+	<h1>The Events</h1>
+</div>
+	<div class="container">
+		<ul class="events">
+		  <% @events.each do |event| %>
+		    <li>
+		      <%= link_to (event.name + ", "  + event.description+", CREATED AT: "+event.created_at.inspect), event %>
+		    </li>
+		  <% end %>
+		</ul>
+	</div>
+
