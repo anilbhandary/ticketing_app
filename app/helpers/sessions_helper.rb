@@ -1,3 +1,5 @@
+require 'date'
+
 module SessionsHelper
   def log_in(user)
       remember_token = User.new_remember_token
@@ -36,5 +38,8 @@ module SessionsHelper
       redirect_to signin_url, notice: "Please sign in." 
     end
   end
-    
+  
+  def old_event?(event)
+    event.event_date < Date.today
+  end
 end
