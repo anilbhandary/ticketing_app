@@ -2,6 +2,8 @@ TicketingApp::Application.routes.draw do
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
   resources :events
+  resources :user_events, only: [:create, :destroy]
+    
   root 'events#index'
   match '/register',  to: 'users#new',            via: 'get'
   match '/login',     to: 'sessions#new',         via: 'get'

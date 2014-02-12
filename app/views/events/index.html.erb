@@ -5,7 +5,7 @@
 		<ul class="events">
 		  <% @events.each do |event| %>
 		    <li>
-		      <%= link_to (event.name + ", "  + event.description+", CREATED AT: "+event.created_at.inspect), event %>
+		      <%= link_to ("EVENT : " +event.name+" | CREATED AT : "+event.created_at.asctime), event %>
 		    </li>
 		  <% end %>
 		</ul>

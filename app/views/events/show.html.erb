@@ -1,3 +1,20 @@
 <% provide(:title, @event.name) %>
-<h1><%= @event.name %></h1>
-<h1><%= @event.description %></h1>
+<div class="row">
+  <aside class="span4">
+    <section>
+		<h1>Event Name</h1>
+      <h1><%= @event.name %></h1>
+      <h2><%= @event.description %></h2>
+    </section>
+  </aside>
+  
+  <div class="span8">
+	<%= render 'attend_form' if signed_in? %>
+    <% if @users.any? %>
+      <h3>Users (<%= @users.count %>)</h3>
+      <ol class="myusers">
+        <%= render @users %>
+      </ol>
+    <% end %>
+  </div>
+</div>
